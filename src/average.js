@@ -11,7 +11,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-// adicione seu código aqui
-} 
+const average = (arrayOfNumbers) => { 
+  let sumOfNumbers = 0;
+  const tamanhoDoArray = arrayOfNumbers.length;
+  if (tamanhoDoArray === 0) {
+  return undefined;
+  } 
+  for (let i = 0; i < tamanhoDoArray; i += 1) {
+  if (typeof arrayOfNumbers[i] !== 'number') {
+  return undefined;
+  }
+  sumOfNumbers += arrayOfNumbers[i];
+  } 
+  let mediaNumbers = sumOfNumbers / tamanhoDoArray;
+  return Math.round(mediaNumbers);
+  };
+
 module.exports = average;
