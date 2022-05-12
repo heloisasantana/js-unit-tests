@@ -24,6 +24,7 @@ const average = (arrayOfNumbers) => {
   sumOfNumbers += arrayOfNumbers[i];
   } 
   let mediaNumbers = sumOfNumbers / tamanhoDoArray;
+  // Referência usada para retornar o valor de um número arredondado para o inteiro mais proximo com o Math.round: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   return Math.round(mediaNumbers);
   };
 

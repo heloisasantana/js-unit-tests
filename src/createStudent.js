@@ -5,7 +5,7 @@
     (2) feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
 
   Implemente a função de forma que ela atenda aos testes propostos.
-
+--
   Parâmetros:
     - Uma string;
   Comportamento:
@@ -15,6 +15,7 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+  const mensagem = () => ('Eita pessoa boa!');
+  const createStudent = (studentName) => ({ name: studentName, feedback: mensagem });
 
 module.exports = createStudent;
