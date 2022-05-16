@@ -31,13 +31,17 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
-    // Teste se o retorno da função é um array.
+    expect(typeof productDetails).toBe('function');
+    // Teste se o retorno da função é um array. (Referência usada para inserir um comando que verifica se tal objeto é um array: https://www.w3schools.com/jsref/jsref_isarray.asp)
+    expect(Array.isArray(productDetails('firstProduct', 'secondProduct'))).toBe(true);
     // Teste se o array retornado pela função contém dois itens dentro.
+    expect(productDetails().length).toBe(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
-    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // Teste se os dois productIds terminam com 123.
+    expect(typeof productDetails()[0,1]).toBe('object');
+    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si. (Referência para inserir .not para fazer uma comparação oposta: https://www.devmedia.com.br/teste-unitario-com-jest/41234)
+    expect(productDetails()[0]).not.toBe(productDetails()[1]);
+    // Teste se os dois productIds terminam com 123. (Referência usada para inserir o comando endsWith que verifica se uma string termina com caracteres específicos: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+    expect(productDetails()[0,1].details.productId.endsWith('123')).toBe(true);
   });
 });
